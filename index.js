@@ -46,9 +46,7 @@ app.get("/books",(req,res) => {
 app.use(singleBook)
 
 app.get("/book/:name", (req,res) => {
-
-
-    res.json(books.filter(book =>  book.name === req.params.name))
+    res.json({bookName:req.params.name})
 
 })
 app.listen(port, () => console.log(`server running at ${port}`))
